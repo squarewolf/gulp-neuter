@@ -1,0 +1,35 @@
+{
+  "name": "gulp-neuter",
+  "version": "0.0.0",
+  "description": "Unifies javascript source files in the order you require",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec --ui bdd test/*_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/squarewolf/gulp-neuter.git"
+  },
+  "keywords": [
+    "gulp",
+    "neuter",
+    "node-neuter"
+  ],
+  "author": "Thomas Vervest <thomas@squarewolf.nl> (http://www.squarewolf.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/squarewolf/gulp-neuter/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "async": "~0.2.10",
+    "should": "~3.1.2",
+    "through2": "~0.4.1",
+    "source-map": "~0.1.32"
+  },
+  "dependencies": {
+    "gulp-util": "~2.2.14",
+    "source-map": "~0.1.32",
+    "neuter": "https://github.com/squarewolf/node-neuter/archive/master.tar.gz"
+  }
+}
