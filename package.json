@@ -23,13 +23,14 @@
   "devDependencies": {
     "mocha": "~1.17.1",
     "async": "~0.2.10",
-    "should": "~3.1.2",
-    "source-map": "~0.1.32"
+    "should": "~3.1.2"
   },
   "dependencies": {
     "gulp-util": "~2.2.14",
     "source-map": "~0.1.32",
+    "async": "~0.2.10",
     "through2": "~0.4.1",
-    "neuter": "~0.1.1"
+    "neuter": "~0.1.1",
+    "source-map": "~0.1.32"
   }
 }
