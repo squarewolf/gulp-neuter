@@ -1,4 +1,4 @@
-# gulp-neuter [![Build Status](https://travis-ci.org/squarewolf/gulp-neuter.png?branch=master)](https://travis-ci.org/squarewolf/node-neuter) [![Dependencies](https://david-dm.org/squarewolf/gulp-neuter.png)](https://david-dm.org/)
+# gulp-neuter [![Build Status](https://travis-ci.org/squarewolf/gulp-neuter.png?branch=master)](https://travis-ci.org/squarewolf/node-neuter) [![Dependencies](https://david-dm.org/squarewolf/gulp-neuter.png)](https://david-dm.org/) [![Code Climate](https://codeclimate.com/github/squarewolf/gulp-neuter.png)](https://codeclimate.com/github/squarewolf/gulp-neuter)
 
 > Unifies javascript source files in the order you require
 

@@ -12,6 +12,7 @@
   },
   "keywords": [
     "gulp",
+    "gulpplugin",
     "neuter",
     "node-neuter"
   ],
@@ -20,6 +21,7 @@
   "bugs": {
     "url": "https://github.com/squarewolf/gulp-neuter/issues"
   },
+  "homepage": "https://github.com/squarewolf/gulp-neuter/",
   "devDependencies": {
     "mocha": "~1.17.1",
     "async": "~0.2.10",
