@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "gulp-util": "~2.2.14",
-    "source-map": "0.1.32",
+    "source-map": "^0.1.33",
     "async": "~0.2.10",
     "through2": "~0.4.1",
     "neuter": "~0.1.1"
