@@ -1,0 +1,15 @@
+{
+  "name": "gulp-neuter-example",
+  "private": true,
+  "author": "Thomas Vervest <thomas@squarewolf.nl> (http://www.squarewolf.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/squarewolf/gulp-neuter/issues"
+  },
+  "homepage": "https://github.com/squarewolf/gulp-neuter/",
+  "devDependencies": {},
+  "dependencies": {
+    "gulp": "^3.6.2",
+    "gulp-clean": "^0.2.4"
+  }
+}
