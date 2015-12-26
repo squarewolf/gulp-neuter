@@ -7,7 +7,7 @@ var buildDir = 'build';
 
 var config = {
 	js: {
-		input: inputDir + '/main.js',
+		input: inputDir + '/**.js',
 		output: buildDir,
 	},
 	html: {
@@ -38,9 +38,7 @@ gulp.task('build-html', function() {
 gulp.task('build-js', function() {
 	return gulp.src(config.js.input)
 		.pipe(neuter('main.js', 'main.map', {
-			filepathTransform: function (filepath) {
-				return inputDir + '/' + filepath;
-			},
+			basePath: inputDir,
 		}))
 		.pipe(gulp.dest(config.js.output));
 });
@@ -48,6 +46,5 @@ gulp.task('build-js', function() {
 gulp.task('default', [
 	'build-html',
 	'build-js',
-	'clean',
 ], function() {
 });

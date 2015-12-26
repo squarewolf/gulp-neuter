@@ -13,9 +13,13 @@ var PLUGIN_NAME = 'gulp-neuter';
 
 var MAPPING_INCLUDE = new Buffer('//@ sourceMappingURL=');
 
-module.exports = function(sourceFileName, mapFileName, options) {
-	if (!sourceFileName) {
-		throw new PluginError(PLUGIN_NAME, 'Missing sourceFileName parameter');
+module.exports = function(outputFileName, mapFileName, options) {
+	if (mapFileName && !outputFileName) {
+		throw new PluginError(PLUGIN_NAME, 'Missing outputFileName parameter');
+	}
+
+	if (outputFileName && !mapFileName) {
+		throw new PluginError(PLUGIN_NAME, 'Missing mapFileName parameter');
 	}
 
 	if (options !== undefined && typeof options !== 'object') {
@@ -53,14 +57,20 @@ module.exports = function(sourceFileName, mapFileName, options) {
 				return done();
 			}
 
-			var codeMap = sourceNode.toStringWithSourceMap({
-				file: sourceFileName,
-			});
+			var options = {};
+			if (outputFileName) {
+				options.file = outputFileName;
+			} else {
+				options.file = path.basename(file.path);
+				console.log(options.file);
+			}
+
+			var codeMap = sourceNode.toStringWithSourceMap(options);
 
 			var sourceFile = new File({
 				cwd: file.cwd,
 				base: file.base,
-				path: path.join(file.base, sourceFileName),
+				path: path.join(file.base, options.file),
 				contents: new Buffer(codeMap.code),
 			});
 

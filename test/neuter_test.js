@@ -51,7 +51,7 @@ describe('Require statements', function() {
 				throw err;
 			}
 
-			var stream = gneuter('simple_require_statements.js');
+			var stream = gneuter();
 			var i = 0;
 
 			stream.on('data', function(result) {
@@ -84,7 +84,7 @@ describe('Require statements', function() {
 				throw err;
 			}
 
-			var stream = gneuter('ignores_files_when_told.js', null, {
+			var stream = gneuter(null, null, {
 				skipFiles: [
 					'test/fixtures/contains_commonjs_require.js'
 				],
@@ -121,7 +121,7 @@ describe('Require statements', function() {
 				throw err;
 			}
 
-			var stream = gneuter('comment_out_require.js');
+			var stream = gneuter();
 			var i = 0;
 
 			stream.on('data', function(result) {
@@ -155,7 +155,7 @@ describe('Require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('local_require_definitions.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -190,7 +190,7 @@ describe('Require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('optional_semicolons.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -225,7 +225,7 @@ describe('Require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('simple_require_filepath_transforms.js', null, {
+				var stream = gneuter(null, null, {
 					filepathTransform: function(filepath) {
 						return 'test/fixtures/' + filepath;
 					},
@@ -264,7 +264,7 @@ describe('Require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('simple_require_filepath_transforms.js', null, {
+				var stream = gneuter(null, null, {
 					basePath: 'test/fixtures/',
 				});
 				var i = 0;
@@ -301,7 +301,7 @@ describe('Require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('duplicate_require_statements.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -336,7 +336,7 @@ describe('Require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('circular_require_statements.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -372,7 +372,7 @@ describe('Relative require statements', function() {
 				throw err;
 			}
 
-			var stream = gneuter('relative_require_statements.js');
+			var stream = gneuter();
 			var i = 0;
 
 			stream.on('data', function(result) {
@@ -406,7 +406,7 @@ describe('Relative require statements', function() {
 					throw err;
 				}
 
-				var stream = gneuter('relative_requires_with_basepath.js', null, {
+				var stream = gneuter(null, null, {
 					basePath: 'test/fixtures/'
 				});
 				var i = 0;
@@ -444,7 +444,7 @@ describe('Seperator options', function() {
 				throw err;
 			}
 
-			var stream = gneuter('simple_require_statements.js', null, {
+			var stream = gneuter(null, null, {
 				separator: '!!!!',
 			});
 			var i = 0;
@@ -481,7 +481,7 @@ describe('Code order between require statements', function() {
 				throw err;
 			}
 
-			var stream = gneuter('respects_code_order_between_requires.js');
+			var stream = gneuter();
 			var i = 0;
 
 			stream.on('data', function(result) {
@@ -517,7 +517,7 @@ describe('Patterns', function() {
 					throw err;
 				}
 
-				var stream = gneuter('glob_require.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -552,7 +552,7 @@ describe('Patterns', function() {
 					throw err;
 				}
 
-				var stream = gneuter('spaces_allowed_within_require_statement.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -587,7 +587,7 @@ describe('Patterns', function() {
 					throw err;
 				}
 
-				var stream = gneuter('optional_dotjs.js');
+				var stream = gneuter();
 				var i = 0;
 
 				stream.on('data', function(result) {
@@ -623,10 +623,10 @@ describe('Source maps', function() {
 				throw err;
 			}
 
-			var sourceFileName = 'source_maps.js';
+			var outputFileName = 'source_maps.js'
 			var mapFileName = 'source_maps.map';
 
-			var stream = gneuter(sourceFileName, mapFileName);
+			var stream = gneuter(outputFileName, mapFileName);
 			var i = 0;
 
 			stream.on('data', function(result) {
@@ -638,7 +638,7 @@ describe('Source maps', function() {
 			        result.should.have.property('contents');
 
 					result.contents.toString().should.equal(expected.contents.toString());
-				} else if (path.basename(result.path) === sourceFileName) {
+				} else if (path.basename(result.path) === outputFileName) {
 					i++;
 
 					result.should.have.property('path');
@@ -670,7 +670,7 @@ describe('Files', function() {
 				throw err;
 			}
 
-			var stream = gneuter('process_as_template.js', null, {
+			var stream = gneuter(null, null, {
 				process: {
 					foo: 5,
 					bar: 'baz'
@@ -708,7 +708,7 @@ describe('Files', function() {
 				throw err;
 			}
 
-			var stream = gneuter('simple_require.js', null, {
+			var stream = gneuter(null, null, {
 				process: function(file) {
 					file.contents = Buffer.concat([
 						new Buffer('// Source for: ' + file.path + '\n'),
