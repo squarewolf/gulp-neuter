@@ -28,6 +28,9 @@ module.exports = function(outputFileName, mapFileName, options) {
 
 	options = options || {};
 
+	// Adding support to include a sourceRoot into source-map. Storing the var here since options obj gets overridden when it's needed.
+	var sourceRoot = options.sourceRoot;
+
 	return through.obj(function (file, enc, done) {
 		if (file.isNull()) {
 			// ignore null files
@@ -63,6 +66,11 @@ module.exports = function(outputFileName, mapFileName, options) {
 			} else {
 				options.file = path.basename(file.path);
 				console.log(options.file);
+			}
+
+			// Including a sourceRoot if passed in
+			if (sourceRoot) {
+				options.sourceRoot = sourceRoot;
 			}
 
 			var codeMap = sourceNode.toStringWithSourceMap(options);
