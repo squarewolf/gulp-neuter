@@ -40,4 +40,6 @@ gulp.task('build-js', function() {
 [node-neuter](https://github.com/squarewolf/node-neuter) documentation.
 Gulp-neuter is a minimalistic wrapper on top of
 [node-neuter](https://github.com/squarewolf/node-neuter) and supports all
-options as listed.
+options as listed. In addition a `sourceRoot` parameter is available which will
+be as the base path when referincing to the original source in the generated
+source map.
