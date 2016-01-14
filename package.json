@@ -17,6 +17,9 @@
     "node-neuter"
   ],
   "author": "Thomas Vervest <thomas@squarewolf.nl> (http://www.squarewolf.nl)",
+  "contributors": [
+    "Victor Carreon (https://www.linkedin.com/in/victorcarreon)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/squarewolf/gulp-neuter/issues"
